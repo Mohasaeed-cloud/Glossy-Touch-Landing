@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        color: white;
+      }
+      .container {
+        width: 70%;
+        padding: 30px;
+        margin: 0px auto;
+        background-image: url(./background-image/image.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .header {
+        width: 90%;
+        background-color: rgba(255, 255, 255, 30%);
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.2);
+      }
+      .hero {
+        width: 90%;
+        background-color: rgba(255, 255, 255, 30%);
+        backdrop-filter: blur(110px);
+        padding: 10px;
+        margin-top: 50px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.2);
+        height: 300px;
+      }
+      .header-logo {
+        height: 60px;
+        width: 60px;
+        position: relative;
+        left: 60px;
+      }
+      a {
+        text-decoration: none;
+        font-size: 17px;
+      }
+      li {
+        list-style-type: none;
+      }
+      .hero-image-image {
+        width: 350px;
+        height: 230px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.2);
+      }
+      .hero-second {
+        width: 250px;
+        height: 270px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      .hero-image {
+        height: 250px;
+        display: flex;
+        align-items: center;
+      }
+      .button-hero {
+        width: 88.5px;
+        height: 36px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 0;
+        background-color: rgba(255, 255, 255, 30%);
+        color: rgb(144, 143, 143);
+      }
+      .button-hero:hover {
+        width: 110px;
+        font-size: 15px;
+        transition: 0.9s;
+        background-color: #8fa4fa;
+        color: white;
+      }
+      .header-links {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        position: relative;
+        right: 40px;
+      }
+      .li-header {
+        padding: 8px;
+        border-radius: 5px;
+      }
+      .li-header:hover {
+        background-color: #8fa4fa;
+        transform: rotate(4deg) translate(-4px, -4px);
+        transition: 1s;
+      }
+      .hero .hero-second p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .hero .hero-second h2 {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      .features {
+        width: 90%;
+        border-radius: 10px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: grid;
+        grid-template-columns: repeat(3, 250px);
+        gap: 55px;
+        padding: 20px;
+      }
+      .card {
+        width: 260px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 30%);
+      }
+      .second-card,
+      .fifth-card,
+      .text-color-links {
+        color: rgb(111, 108, 108);
+      }
+      .card:hover {
+        box-shadow: 10px 10px 15px 3px #20a7db;
+        transform: translateX(15px) translateY(15px);
+        transition: 0.9s;
+      }
+      .footer {
+        width: 90%;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 30%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-links {
+        display: flex;
+        padding-left: 0;
+        gap: 20px;
+      }
+      .line {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        width: 800px;
+        margin: 0;
+      }
+      .text-color-links-white {
+        color: white;
+      }
+      .text-color-links-black {
+        color: rgba(0, 0, 0, 0.707);
+      }
+      @keyframes color {
+        0% {
+          background-color: rgba(255, 255, 255, 0);
+          transform: translate(0, 0);
+        }
+        25% {
+          background-color: #8fa4fa;
+          transform: translate(10px, 0);
+        }
+        50% {
+          background-color: rgba(255, 255, 255, 0);
+          transform: translate(10px, 10px);
+        }
+        75% {
+          background-color: #8fa4fa;
+          transform: translate(0, 10px);
+        }
+        100% {
+          background-color: rgba(255, 255, 255, 0);
+          transform: translate(0, 0);
+        }
+      }
+      .animation {
+        animation-name: color;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        padding: 10px;
+      }
+      @media (max-width: 880px) {
+        .header {
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 880px) {
+        .footer-links {
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 930px) {
+        .fifth-card,
+        .second-card {
+          color: white;
+        }
+      }
+      @media (max-width: 930px) {
+        .text-color-links {
+          color: white;
+        }
+      }
+      @media (max-width: 600px) {
+        .header-links {
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 1170px) {
+        .hero {
+          flex-direction: column;
+          height: 400px;
+          width: 400px;
+        }
+      }
+      @media (max-width: 600px) {
+        .hero {
+          flex-direction: column;
+          height: 400px;
+          width: 300px;
+        }
+      }
+      @media (max-width: 700px) {
+        .button-hero {
+          color: white;
+        }
+      }
+      @media (max-width: 700px) {
+        .hero-image-image {
+          width: 220px;
+        }
+      }
+      @media (max-width: 1380px) {
+        .features {
+          grid-template-columns: 250px 250px;
+        }
+      }
+      @media (max-width: 970px) {
+        .features {
+          grid-template-columns: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- header -->
+      <div class="header">
+        <img src="./logo/logo4.png" class="header-logo" alt="" />
+        <ul class="header-links">
+          <li class="li-header"><a href="">Home</a></li>
+          <li class="li-header"><a href="">About</a></li>
+          <li class="li-header"><a href="">Services</a></li>
+          <li class="li-header"><a href="">Contact</a></li>
+        </ul>
+      </div>
+      <!-- hero -->
+      <div class="hero">
+        <img src="./images/image.jpg" class="hero-image-image" alt="" />
+        <div class="hero-second">
+          <h2>Welcome to the future</h2>
+          <p>
+            Experience cutting-edge glass morphism design that brings depth and
+            elegance to modern web interface. Clean, translucent, and
+            beautifully interactive.
+          </p>
+          <button class="button-hero">Learn More</button>
+        </div>
+      </div>
+      <!-- features -->
+      <div class="features">
+        <div class="card">
+          <h3>Modern Design</h3>
+          <p>
+            Experience cutting-edge glass morphism design that brings depth and
+            elegance to modern web interface. Clean, translucent, and
+            beautifully interactive.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Modern Design</h3>
+          <p class="second-card">
+            Experience cutting-edge glass morphism design that brings depth and
+            elegance to modern web interface. Clean, translucent, and
+            beautifully interactive.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Modern Design</h3>
+          <p>
+            Experience cutting-edge glass morphism design that brings depth and
+            elegance to modern web interface. Clean, translucent, and
+            beautifully interactive.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Modern Design</h3>
+          <p>
+            Experience cutting-edge glass morphism design that brings depth and
+            elegance to modern web interface. Clean, translucent, and
+            beautifully interactive.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="fifth-card">Modern Design</h3>
+          <p class="fifth-card">
+            Experience cutting-edge glass morphism design that brings depth and
+            elegance to modern web interface. Clean, translucent, and
+            beautifully interactive.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Modern Design</h3>
+          <p>
+            Experience cutting-edge glass morphism design that brings depth and
+            elegance to modern web interface. Clean, translucent, and
+            beautifully interactive.
+          </p>
+        </div>
+      </div>
+      <!-- footer -->
+      <div class="footer">
+        <ul class="footer-links">
+          <li class="animation">
+            <a href="" class="text-color-links-white">About US</a>
+          </li>
+          <li class="animation">
+            <a href="" class="text-color-links-white">Privacy Policy</a>
+          </li>
+          <li class="animation">
+            <a href="" class="text-color-links">Terms of Services</a>
+          </li>
+          <li class="animation">
+            <a href="" class="text-color-links">XML Sitemap</a>
+          </li>
+          <li class="animation">
+            <a href="" class="text-color-links">Contact</a>
+          </li>
+        </ul>
+        <hr class="line" />
+        <p class="text-color-links-black">
+          2026 All rights reserved, collected with AMIT by Mohamed Saeed.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
